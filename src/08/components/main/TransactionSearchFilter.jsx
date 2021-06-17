@@ -5,14 +5,21 @@ import Text from '../../../doit-ui/Text';
 import Select, { Option } from '../../../doit-ui/Select';
 import Input from '../../../doit-ui/Input';
 import Button from '../../../doit-ui/Button';
+import Api from '../../Api';
+import PropTypes from 'prop-types';
 
 class TransactionSearchFilter extends PureComponent {
   render() {
     return (
-      <Form onSubmit={(values) => console.log(values)}>
+      <Form
+        onSubmit={(values) =>
+          Api.get('/transactions', { params: values }).then(({ data }) =>
+            this.props.setTransactionList(data),
+          )
+        }
+      >
         <Form.Consumer>
           {({ onChange, values }) => {
-            console.log(values);
             return (
               <InlineList spacingBetween={2} verticalAlign="bottom">
                 <Text large bold>
@@ -47,5 +54,9 @@ class TransactionSearchFilter extends PureComponent {
     );
   }
 }
+
+TransactionSearchFilter.propTypes = {
+  setTransactionList: PropTypes.func,
+};
 
 export default TransactionSearchFilter;

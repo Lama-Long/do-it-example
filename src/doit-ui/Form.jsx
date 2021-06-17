@@ -52,7 +52,6 @@ class FormProvider extends PureComponent {
 
   render() {
     const { values, errors } = this.state;
-    console.log(values);
     return (
       <Provider value={{ errors, values, onChange: this.onChange, reset: this.reset }}>
         <form onSubmit={this.handleSubmit}>{this.props.children}</form>

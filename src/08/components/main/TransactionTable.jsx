@@ -13,19 +13,27 @@ class TransactionTable extends PureComponent {
       <Table>
         <TableHead>
           <TableRow>
-            <TableCell align="left">코인</TableCell>
-            <TableCell align="center">시가 총액</TableCell>
-            <TableCell align="center">현재 시세</TableCell>
-            <TableCell align="right">거래 시간</TableCell>
+            <TableCell align="left" isHeader>
+              코인
+            </TableCell>
+            <TableCell align="center" isHeader>
+              시가 총액
+            </TableCell>
+            <TableCell align="center" isHeader>
+              현재 시세
+            </TableCell>
+            <TableCell align="center" isHeader>
+              거래 시간
+            </TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
-          {transactions.map(({ id, name, totalPrice, currentPrice, datetime }) => (
-            <TableRow id={id}>
-              <TableCell>{name}</TableCell>
-              <TableCell>{totalPrice}</TableCell>
-              <TableCell>{currentPrice}</TableCell>
-              <TableCell>{datetime}</TableCell>
+          {transactions.map(({ id, name, totalPrice, currentPrice, dateTime }) => (
+            <TableRow id={id} key={id}>
+              <TableCell align="left">{name}</TableCell>
+              <TableCell align="right">{totalPrice.toLocaleString()}</TableCell>
+              <TableCell align="right">{currentPrice.toLocaleString()}</TableCell>
+              <TableCell align="center">{dateTime}</TableCell>
             </TableRow>
           ))}
         </TableBody>
@@ -37,11 +45,11 @@ class TransactionTable extends PureComponent {
 TransactionTable.propTypes = {
   transactions: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.string,
+      id: PropTypes.number,
       name: PropTypes.string,
-      totalPrice: PropTypes.string,
-      currentPrice: PropTypes.string,
-      datetime: PropTypes.string,
+      totalPrice: PropTypes.number,
+      currentPrice: PropTypes.number,
+      dateTime: PropTypes.string,
     }),
   ),
 };

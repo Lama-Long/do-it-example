@@ -23,6 +23,8 @@ AppLayout.propTypes = {
 export default withStyles(({ unit }) => ({
   wrapper: {
     marginTop: HEIGHT,
+    maxWidth: '1080px',
+    margin: '0 auto',
   },
   body: {
     padding: unit * 4,

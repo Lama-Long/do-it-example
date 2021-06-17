@@ -11,9 +11,12 @@ class AppNav extends PureComponent {
     return (
       <div {...css(styles.wrapper)}>
         <div {...css(styles.container)}>
-          <Heading level={3} inverse>
-            두잇 코인 거래소
-          </Heading>
+          <div {...css(styles.title)}>
+            <img {...css(styles.img)} src={require('../../logo.jpg')} alt="logo" />
+            <Heading level={3} inverse>
+              두잇 코인 거래소
+            </Heading>
+          </div>
           <Text inverse bold large>
             회원가입
           </Text>
@@ -47,6 +50,15 @@ export default withStyles(({ color, depth, unit }) => {
       alignItems: 'center',
       paddingRight: unit * 2,
       paddingLeft: unit * 2,
+    },
+    title: {
+      display: 'flex',
+      alignItems: 'center',
+    },
+    img: {
+      width: '30px',
+      height: '30px',
+      marginRight: '10px',
     },
   };
 })(AppNav);
