@@ -9,15 +9,21 @@ import Api from '../../Api';
 import PropTypes from 'prop-types';
 
 class TransactionSearchFilter extends PureComponent {
+  handleSubmit = (values) =>
+    Api.get('/transactions', { params: this.getFilteringValues(values) }).then(({ data }) =>
+      this.props.setTransactionList(data),
+    );
+
+  getFilteringValues(values) {
+    return Object.entries(values).reduce((a, b) => {
+      a[b[0]] = b[1] || undefined;
+      return a;
+    }, {});
+  }
+
   render() {
     return (
-      <Form
-        onSubmit={(values) =>
-          Api.get('/transactions', { params: values }).then(({ data }) =>
-            this.props.setTransactionList(data),
-          )
-        }
-      >
+      <Form onSubmit={this.handleSubmit}>
         <Form.Consumer>
           {({ onChange, values }) => {
             return (
@@ -32,14 +38,14 @@ class TransactionSearchFilter extends PureComponent {
                   <Option value="DOIT" label="두잇코인(DOIT)" />
                 </Select>
                 <Input
-                  name="minAmount"
-                  value={values['minAmount']}
+                  name="currentPrice_gte"
+                  value={values['currentPrice_gte']}
                   onChange={onChange}
                   label="최소 거래가"
                 />
                 <Input
-                  name="maxAmount"
-                  value={values['maxAmount']}
+                  name="currentPrice_lte"
+                  value={values['currentPrice_lte']}
                   onChange={onChange}
                   label="최대 거래가"
                 />
