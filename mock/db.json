@@ -15,6 +15,22 @@
       "totalPrice": 1230000,
       "currentPrice": 20000,
       "dateTime": "2019/01/20 07:23:22"
+    },
+    {
+      "code": "BTX",
+      "name": "비트코인(BTX)",
+      "totalPrice": 12648000,
+      "currentPrice": 4216000,
+      "dateTime": "2021/06/21 21:48:35",
+      "id": 3
+    },
+    {
+      "code": "BTX",
+      "name": "비트코인(BTX)",
+      "totalPrice": 4216000,
+      "currentPrice": 4216000,
+      "dateTime": "2021/06/21 21:54:02",
+      "id": 4
     }
   ]
 }

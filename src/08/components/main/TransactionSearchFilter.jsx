@@ -5,14 +5,10 @@ import Text from '../../../doit-ui/Text';
 import Select, { Option } from '../../../doit-ui/Select';
 import Input from '../../../doit-ui/Input';
 import Button from '../../../doit-ui/Button';
-import Api from '../../Api';
 import PropTypes from 'prop-types';
 
 class TransactionSearchFilter extends PureComponent {
-  handleSubmit = (values) =>
-    Api.get('/transactions', { params: this.getFilteringValues(values) }).then(({ data }) =>
-      this.props.setTransactionList(data),
-    );
+  handleSubmit = (values) => this.props.requestTransactionList(this.getFilteringValues(values));
 
   getFilteringValues(values) {
     return Object.entries(values).reduce((a, b) => {
@@ -62,7 +58,7 @@ class TransactionSearchFilter extends PureComponent {
 }
 
 TransactionSearchFilter.propTypes = {
-  setTransactionList: PropTypes.func,
+  requestTransactionList: PropTypes.func,
 };
 
 export default TransactionSearchFilter;

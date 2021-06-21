@@ -30,7 +30,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "mockserver": "json-server --watch --deley 500 --port 4000 mock/db.json"
+    "mockserver": "json-server --watch --deley 500 --port 4000 mock/db.json",
+    "errorserver": "node mock/fake.js"
   },
   "eslintConfig": {
     "extends": "react-app"

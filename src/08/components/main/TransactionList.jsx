@@ -2,17 +2,16 @@ import React, { PureComponent } from 'react';
 import Heading from '../../../doit-ui/Heading';
 import Card from '../../../doit-ui/Card';
 import TransactionTable from './TransactionTable';
-import Api from '../../Api';
 import TransactionSearchFilterContainer from '../../containers/main/TransactionSearchFilterContainer';
 import PropTypes from 'prop-types';
 
 class TransactionList extends PureComponent {
   componentDidMount() {
-    Api.get('/transactions').then(({ data }) => this.props.setTransactionList(data));
+    this.props.requestTransactionList();
   }
 
   render() {
-    const { transactions } = this.props;
+    const { transactions, loading } = this.props;
     return (
       <div>
         <Heading level={3}>거래 현황</Heading>
@@ -20,7 +19,7 @@ class TransactionList extends PureComponent {
           <TransactionSearchFilterContainer />
         </Card>
         <Card>
-          <TransactionTable transactions={transactions} />
+          <TransactionTable transactions={transactions} isLoading={loading} />
         </Card>
       </div>
     );
@@ -28,12 +27,12 @@ class TransactionList extends PureComponent {
 }
 
 TransactionList.propTypes = {
-  setTransactionList: PropTypes.func,
+  requestTransactionList: PropTypes.func,
 };
 
 TransactionList.defaultProps = {
   transactions: [],
-  setTransactionList: () => {},
+  requestTransactionList: () => {},
 };
 
 export default TransactionList;
