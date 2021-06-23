@@ -8,14 +8,14 @@ import Button from '../../../doit-ui/Button';
 import PropTypes from 'prop-types';
 
 class TransactionSearchFilter extends PureComponent {
-  handleSubmit = (values) => this.props.requestTransactionList(this.getFilteringValues(values));
-
-  getFilteringValues(values) {
-    return Object.entries(values).reduce((a, b) => {
-      a[b[0]] = b[1] || undefined;
-      return a;
-    }, {});
-  }
+  handleSubmit = (values) => {
+    const { requestTransactionList, setFilter } = this.props;
+    const cleanedParams = Object.entries(values)
+      .filter((entries) => entries[1] !== '')
+      .reduce((obj, [key, values]) => ({ ...obj, [key]: values }), {});
+    requestTransactionList(cleanedParams);
+    setFilter(cleanedParams);
+  };
 
   render() {
     return (
@@ -59,6 +59,7 @@ class TransactionSearchFilter extends PureComponent {
 
 TransactionSearchFilter.propTypes = {
   requestTransactionList: PropTypes.func,
+  setFilter: PropTypes.func,
 };
 
 export default TransactionSearchFilter;

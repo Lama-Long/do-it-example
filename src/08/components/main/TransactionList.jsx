@@ -4,6 +4,7 @@ import Card from '../../../doit-ui/Card';
 import TransactionTable from './TransactionTable';
 import TransactionSearchFilterContainer from '../../containers/main/TransactionSearchFilterContainer';
 import PropTypes from 'prop-types';
+import TransactionPaginationContainer from '../../containers/main/TransactionPaginationContainer';
 
 class TransactionList extends PureComponent {
   componentDidMount() {
@@ -21,6 +22,7 @@ class TransactionList extends PureComponent {
         <Card>
           <TransactionTable transactions={transactions} isLoading={loading} />
         </Card>
+        <TransactionPaginationContainer />
       </div>
     );
   }

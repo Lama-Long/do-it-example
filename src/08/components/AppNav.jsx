@@ -43,6 +43,7 @@ export default withStyles(({ color, depth, unit }) => {
       width: '100%',
       height: HEIGHT - 4,
       backgroundColor: color.primary,
+      zIndex: 10,
     },
     container: {
       display: 'flex',

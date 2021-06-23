@@ -1,6 +1,5 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import Api from '../../Api';
 import { Consumer as ModalConsumer } from '../../../doit-ui/Modal/context';
 import Form from '../../../doit-ui/Form';
 import Spacing from '../../../doit-ui/Spacing';
@@ -12,7 +11,7 @@ import moment from 'moment';
 
 class TradeCoinPage extends PureComponent {
   handleSubmit = (values, closeModal) => {
-    const { name, code } = this.props;
+    const { name, code, createTransaction, requestTransactionList } = this.props;
     const { amount, currentPrice } = values;
 
     const formValues = {
@@ -22,11 +21,11 @@ class TradeCoinPage extends PureComponent {
       currentPrice: parseInt(currentPrice),
       dateTime: moment().format('YYYY/MM/DD HH:mm:ss'),
     };
-    Api.post('/transactions', formValues).then(() => closeModal());
+    createTransaction(formValues, closeModal, requestTransactionList);
   };
 
   render() {
-    const { name, price, type } = this.props;
+    const { name, price, type, loading } = this.props;
     const typeName = type === 'sell' ? '판매' : '구매';
     return (
       <ModalConsumer>
@@ -58,8 +57,12 @@ class TradeCoinPage extends PureComponent {
                     />
                   </Spacing>
                   <InlineList spacingBetween={1}>
-                    <Button primary>{typeName}</Button>
-                    <Button onPress={closeModal}>취소</Button>
+                    <Button primary disabled={loading}>
+                      {loading ? '거래 처리중' : typeName}
+                    </Button>
+                    <Button onPress={closeModal} disabled={loading}>
+                      취소
+                    </Button>
                   </InlineList>
                 </Spacing>
               )}
@@ -73,6 +76,7 @@ class TradeCoinPage extends PureComponent {
 
 TradeCoinPage.propTypes = {
   createTransaction: PropTypes.func,
+  loading: PropTypes.bool,
 };
 
 export default TradeCoinPage;

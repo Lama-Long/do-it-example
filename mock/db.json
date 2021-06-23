@@ -31,6 +31,70 @@
       "currentPrice": 4216000,
       "dateTime": "2021/06/21 21:54:02",
       "id": 4
+    },
+    {
+      "code": "DOIT",
+      "name": "두잇코인(DOIT)",
+      "totalPrice": 108000,
+      "currentPrice": 36000,
+      "dateTime": "2021/06/22 22:50:15",
+      "id": 5
+    },
+    {
+      "code": "ETH",
+      "name": "이더리움(ETH)",
+      "totalPrice": 432000,
+      "currentPrice": 216000,
+      "dateTime": "2021/06/22 23:37:27",
+      "id": 6
+    },
+    {
+      "code": "DOIT",
+      "name": "두잇코인(DOIT)",
+      "totalPrice": 180000,
+      "currentPrice": 36000,
+      "dateTime": "2021/06/22 23:38:42",
+      "id": 7
+    },
+    {
+      "code": "DOIT",
+      "name": "두잇코인(DOIT)",
+      "totalPrice": 396000,
+      "currentPrice": 36000,
+      "dateTime": "2021/06/22 23:40:29",
+      "id": 8
+    },
+    {
+      "code": "ETH",
+      "name": "이더리움(ETH)",
+      "totalPrice": 864000,
+      "currentPrice": 216000,
+      "dateTime": "2021/06/22 23:42:20",
+      "id": 9
+    },
+    {
+      "code": "BTX",
+      "name": "비트코인(BTX)",
+      "totalPrice": 4216000,
+      "currentPrice": 4216000,
+      "dateTime": "2021/06/22 23:43:40",
+      "id": 10
+    },
+    {
+      "code": "ETH",
+      "name": "이더리움(ETH)",
+      "totalPrice": 432000,
+      "currentPrice": 216000,
+      "dateTime": "2021/06/22 23:49:58",
+      "id": 11
+    },
+    {
+      "code": "DOIT",
+      "name": "두잇코인(DOIT)",
+      "totalPrice": 144000,
+      "currentPrice": 36000,
+      "dateTime": "2021/06/23 00:16:17",
+      "id": 12
     }
   ]
 }

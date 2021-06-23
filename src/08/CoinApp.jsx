@@ -1,9 +1,11 @@
 import React, { PureComponent } from 'react';
 import AppLayout from './components/AppLayout';
-import MainPage from './components/main/MainPage';
 import { Provider } from 'react-redux';
 import configureStore from './store/configureStore';
 import ModalProvider from './ModalProvider';
+import CoinOverview from './components/main/CoinOverview';
+import TransactionListContainer from './containers/main/TransactionListContainer';
+import NotificationContainer from './containers/NotificationContainer';
 
 class CoinApp extends PureComponent {
   store = configureStore();
@@ -12,7 +14,9 @@ class CoinApp extends PureComponent {
       <Provider store={this.store}>
         <ModalProvider>
           <AppLayout>
-            <MainPage />
+            <CoinOverview />
+            <TransactionListContainer />
+            <NotificationContainer />
           </AppLayout>
         </ModalProvider>
       </Provider>

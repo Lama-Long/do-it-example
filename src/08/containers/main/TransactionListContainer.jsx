@@ -1,10 +1,11 @@
 import TransactionList from '../../components/main/TransactionList';
 import { connect } from 'react-redux';
-import { requestTransactionList } from '../../actions/transactionActions';
+import { requestTransactionList, FETCH_TRANSACTION_LIST } from '../../transactionPackActions';
 
 const mapStateToProps = (state) => {
-  const { ids, entities, loading } = state.transactions;
+  const { ids, entities, loadingState } = state.transactions;
   const transactions = ids.map((id) => entities[id]);
+  const loading = loadingState[FETCH_TRANSACTION_LIST];
   return { transactions, loading };
 };
 const mapDispatchToProps = {
