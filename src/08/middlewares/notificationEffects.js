@@ -1,7 +1,7 @@
 import { hideMessage, SHOW_NOTIFICATION, showMessage } from '../actions/notificationActions';
 import { debounce } from '../../02/debounce';
-import { FETCH_TRANSACTION_LIST } from '../transactionPackActions';
 import { KEY, LIFECYCLE } from 'redux-pack';
+import { FETCH_TRANSACTION_LIST } from '../actions/transactionPackActions';
 
 const debounceRunner = debounce((action) => action(), 2000);
 

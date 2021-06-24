@@ -2,6 +2,9 @@ import React, { PureComponent } from 'react';
 import { css, withStyles, withStylesPropTypes } from '../../doit-ui/withStyles';
 import Heading from '../../doit-ui/Heading';
 import Text from '../../doit-ui/Text';
+import { Consumer as ModalConsumer } from '../../doit-ui/Modal/context';
+import Button from '../../doit-ui/Button';
+import { REGISTER_USER_MODAL } from '../constants/modals';
 
 export const HEIGHT = 64;
 
@@ -20,6 +23,18 @@ class AppNav extends PureComponent {
           <Text inverse bold large>
             회원가입
           </Text>
+          <ModalConsumer>
+            {({ openModal }) => (
+              <Button
+                inverse
+                bold
+                large
+                onPress={() => openModal(REGISTER_USER_MODAL, { totalAmount: 0 })}
+              >
+                회원 가입
+              </Button>
+            )}
+          </ModalConsumer>
         </div>
       </div>
     );

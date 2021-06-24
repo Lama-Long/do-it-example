@@ -1,6 +1,5 @@
 import { handle } from 'redux-pack';
-import { FETCH_TRANSACTION_LIST } from '../transactionPackActions';
-import { CREATE_TRANSACTION } from '../actions/transactionPackActions';
+import { CREATE_TRANSACTION, FETCH_TRANSACTION_LIST } from '../actions/transactionPackActions';
 
 const initState = {
   ids: [],

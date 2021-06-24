@@ -21,6 +21,7 @@ export default function createModalProvider(ContentMap = {}) {
     render() {
       const { children } = this.props;
       const { showModal } = this.state;
+
       const ModalContent = ContentMap[this.contentId];
       return (
         <Provider value={{ openModal: this.handleOpen, closeModal: this.handleClose }}>

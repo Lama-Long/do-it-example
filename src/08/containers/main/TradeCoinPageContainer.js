@@ -1,7 +1,10 @@
 import { connect } from 'react-redux';
-import { CREATE_TRANSACTION, createTransaction } from '../../actions/transactionPackActions';
+import {
+  CREATE_TRANSACTION,
+  createTransaction,
+  requestTransactionList,
+} from '../../actions/transactionPackActions';
 import TradeCoinPage from '../../components/main/TradeCoinPage01';
-import { requestTransactionList } from '../../transactionPackActions';
 
 const mapStateToProps = (state) => {
   const { loadingState } = state.transactions;
