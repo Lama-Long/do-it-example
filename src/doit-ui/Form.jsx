@@ -63,6 +63,7 @@ class FormProvider extends PureComponent {
 FormProvider.propTypes = {
   validate: PropTypes.func,
   onSubmit: PropTypes.func,
+  initValues: PropTypes.object,
 };
 
 FormProvider.defaultProps = {

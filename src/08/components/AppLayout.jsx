@@ -28,5 +28,6 @@ export default withStyles(({ unit }) => ({
   },
   body: {
     padding: unit * 4,
+    marginTop: HEIGHT,
   },
 }))(AppLayout);
