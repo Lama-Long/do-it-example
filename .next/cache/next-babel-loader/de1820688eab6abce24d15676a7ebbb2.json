@@ -1,0 +1,1 @@
+{"ast":null,"code":"export var TRADE_COIN_MODAL = 'modal/TRADE_COIN_MODAL';\nexport var REGISTER_USER_MODAL = 'modal/REGISTER_USER_MODAL';","map":null,"metadata":{},"sourceType":"module"}

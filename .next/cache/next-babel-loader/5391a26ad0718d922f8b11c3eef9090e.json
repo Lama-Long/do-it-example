@@ -1,0 +1,1 @@
+{"ast":null,"code":"export var FETCH_LIST = 'api-redux-pack/FETCH_LIST';\nexport var FETCH = 'api-redux-pack/FETCH';\nexport var UPDATE = 'api-redux-pack/UPDATE';\nexport var CREATE = 'api-redux-pack/CREATE';\nexport var RESET = 'api-redux-pack/RESET';","map":null,"metadata":{},"sourceType":"module"}

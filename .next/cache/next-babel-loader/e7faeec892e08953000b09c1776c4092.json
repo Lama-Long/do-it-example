@@ -1,0 +1,1 @@
+{"ast":null,"code":"import { connect } from 'react-redux';\nimport TransactionSearchFilter from '../../components/main/TransactionSearchFilter';\n\nconst mapStateToProps = state => ({\n  initValues: state.searchFilter.params\n});\n\nexport default connect(mapStateToProps)(TransactionSearchFilter);","map":null,"metadata":{},"sourceType":"module"}

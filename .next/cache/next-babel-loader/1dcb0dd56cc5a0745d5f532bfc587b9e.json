@@ -1,0 +1,1 @@
+{"ast":null,"code":"var __jsx = React.createElement;\nimport React from 'react';\nimport { PureComponent } from 'react';\nimport MainPage from '../src/08/components/main/MainPage';\n\nclass IndexDocument extends PureComponent {\n  render() {\n    return __jsx(MainPage, null);\n  }\n\n}\n\nexport default IndexDocument;","map":null,"metadata":{},"sourceType":"module"}

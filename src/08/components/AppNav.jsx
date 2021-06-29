@@ -14,7 +14,7 @@ class AppNav extends PureComponent {
       <div {...css(styles.wrapper)}>
         <div {...css(styles.container)}>
           <div {...css(styles.title)}>
-            <img {...css(styles.img)} src={require('../../logo.jpg')} alt="logo" />
+            <img {...css(styles.img)} src="logo.jpg" alt="logo" />
             <Heading level={3} inverse>
               두잇 코인 거래소
             </Heading>

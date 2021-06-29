@@ -5,7 +5,7 @@ import configureStore from './store/configureStore';
 import ModalProvider from './ModalProvider';
 import NotificationContainer from './containers/NotificationContainer';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import MainPage from './components/main/MainPage';
+import MainPage from '../13/AsyncMainPage';
 import NotFound from './components/NotFound';
 import RouterStateContainer from './containers/RouterStateContainer';
 
